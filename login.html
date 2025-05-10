@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход в аккаунт</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h3>Вход</h3>
+        <form id="loginForm" onsubmit="event.preventDefault(); loginUser();">
+            <label for="loginUsername">Логин</label>
+            <input type="text" id="loginUsername" required>
+            <label for="loginPassword">Пароль</label>
+            <input type="password" id="loginPassword" required>
+            <button type="submit">Войти</button>
+        </form>
+        <a class="register-link" href="registration.html">Нет аккаунта? Зарегистрироваться</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

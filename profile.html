@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link rel="stylesheet" href="profile.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="profile-container">
+        <h2>Ваш профиль</h2>
+        <!-- Profile Photo Section -->
+        <div class="profile-header">
+            <div class="profile-photo" id="profilePhoto" style="background-image: url('default-photo.jpg');"></div>
+            <div>
+                <p><strong>Логин:</strong> <span id="profileUsername"></span></p>
+                <input type="file" id="photoUpload" accept="image/*" capture="environment" style="display: none;">
+                <button class="btn" id="changePhotoButton">Изменить фото</button>
+            </div>
+        </div>
+        <div class="results-container">
+        <strong>Общее количество:</strong> <span id="co2_amount">0</span> кг</p>
+        <strong>Уровень выбросов:</strong> <span id="co2_level">-</span></p>
+        </div>
+        <h3>Ваши рекомендации:</h3>
+        <form id="recommendationsForm"></form>
+        <div id="completionPercent"></div>
+        <!-- Move the button here, after the advices and percent -->
+        <button class="btn" onclick="window.location.href='https://www.metal.com/en/markets/24?'">
+            Перейти на главную страницу
+        </button>
+    </div>
+</body>
+</html>

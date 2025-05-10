@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<head>
+    <title>Internal CSS Example</title>
+    <style>
+        p {
+            font-family: 'Unbounded';
+            font-size: 18px;
+            color: white;
+            font-weight: 300;
+            text-align: left;
+            margin: 5px
+        }
+    </style>
+</head>
+
+</body>
+
+    <div class="results-container">
+        <h2>Ваш уровень выбросов CO₂</h2>
+        <p><strong>Общее количество:</strong> <span id="co2_amount">0</span> кг</p>
+        <p><strong>Уровень выбросов:</strong> <span id="co2_level">-</span></p>
+    </div>
+    
+    <div class="advice-container-ecology">
+        <p><strong>Персональные советы по экологичным привычкам: </strong></p>
+        <p id="ecology_advice"></p>
+    </div>
+
+    <div class="advice-container-water">
+        <p><strong>Персональные советы по потреблению воды: </strong></p>
+        <p id="water_advice"></p>
+    </div>
+
+    <div class="advice-container-car">
+        <p><strong>Персональные советы по использованию транспорта: </strong></p>
+        <p id="car_advice"></p>
+    </div>
+
+    <div class="advice-container-energy">
+        <p><strong>Персональные советы по энергопотреблению: </strong></p>
+        <p id="energy_advice"></p>
+    </div>
+
+    <div class="advice-container-food">
+        <p><strong>Персональные советы по питанию и потреблению продуктов: </strong></p>
+        <p id="food_advice"></p>
+    </div>
+
+    <div class="advice-container-shop">
+        <p><strong>Персональные советы по потреблению товаров одежды, электроники и т.д.: </strong></p>
+        <p id="shop_advice"></p>
+    </div>
+    <div class="login-container">
+        <h3>Вход</h3>
+        <form id="loginForm">
+            <label for="loginUsername">Логин:</label>
+            <input type="text" id="loginUsername" required>
+            <label for="loginPassword">Пароль:</label>
+            <input type="password" id="loginPassword" required>
+        </form>
+        <div style="text-align: center;">
+            <button type="button" class="reg-btn" onclick="loginUser()">Войти</button>
+        </div>
+        </p>
+        <p class="no-account">
+            Если у вас нет аккаунта,
+            <button type="button" class="reg-btn left-align-btn" onclick="redirectToRegistration()">зарегистрируйтесь здесь</button>
+        </p>
+    </div>
+</body>
+<button class="btn btn-results" onclick="window.location.href='https://www.metal.com/en/markets/24?'">
+    Перейти на главную страницу
+</button>
+</html>
