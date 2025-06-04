@@ -26,7 +26,6 @@ body {
     font-size: 30px;
 }
 
-/* Profile Header Section */
 .profile-header {
     display: flex;
     gap: 30px;
@@ -49,7 +48,7 @@ body {
     border-color: #bbbbbb;
 }
 
-/* Profile Info */
+
 .profile-header p {
     margin: 10px 0;
     font-size: 20px;
@@ -60,7 +59,7 @@ body {
     font-weight: 600;
 }
 
-/* Buttons */
+
 .btn {
     background-color: #3c8b83;
     color: white;
@@ -80,7 +79,7 @@ body {
     background-color: #28605a;
 }
 
-/* Recommendations Section */
+
 h3 {
     color: #1c2835;
     margin: 25px 0 15px;
@@ -95,7 +94,7 @@ h3 {
     gap: 15px;
 }
 
-/* Completion Percentage */
+
 #completionPercent {
     margin-top: 25px;
     padding: 15px;
@@ -105,7 +104,7 @@ h3 {
     color: #2c3e50;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .profile-header {
         flex-direction: column;
