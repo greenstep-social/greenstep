@@ -106,9 +106,8 @@ const answerToAdvice = {
       "Индукционная": "Готовьте на малом или среднем огне для экономии ресурсов в течение недели."
     }
   };
-// Функция для обработки ответов и расчета CO2
+
 function submitAnswers() {
-    // Получаем значения ответов с формы
     const question1 = document.querySelector('input[name="question1"]:checked');
     const question2 = document.querySelector('input[name="question2"]:checked');
     const question3 = document.querySelector('input[name="question3"]:checked');
@@ -139,13 +138,11 @@ function submitAnswers() {
     const question28 = document.querySelector('input[name="question28"]:checked');
     const question29 = document.querySelector('input[name="question29"]:checked');
 
-    // Проверяем, выбраны ли ответы
     if (!question1 || !question2 || !question3 || !question4 || !question5 || !question6 || !question7 || !question8 || !question9 || !question10 || !question11 || !question12 || !question13 || !question14 || !question15 || !question16 || !question17 || !question18 || !question19 || !question20 || !question21 || !question22 || !question23 || !question24 || !question25 || !question26 || !question27 || !question28 || !question29) {
         alert("Пожалуйста, ответьте на все вопросы!");
         return;
     }
 
-    // Сохраняем ответы в localStorage
     const answers = {
         question1: question1.value,
         question2: question2.value,
@@ -180,14 +177,14 @@ function submitAnswers() {
 
     localStorage.setItem("quizAnswers", JSON.stringify(answers));
 
-    // Переходим на страницу с результатами
+
     window.location.href = "results.html";
 }
-// Функция для корректного вывода рекомендаций в отдельных строках
+
 function formatAdvice(advice) {
-    return advice.split('. ').join('.<br>'); // Добавляем перенос строки после каждого предложения
+    return advice.split('. ').join('.<br>'); 
 }
-// Функция для вычисления CO2 и вывода результатов
+
 function displayResults() {
     const answers = JSON.parse(localStorage.getItem("quizAnswers"));
     if (!answers) {
@@ -203,7 +200,7 @@ function displayResults() {
     let food_advice = '';
     let shop_advice = '';
 
-    // Рассчитываем выбросы CO2 по первому вопросу
+    
     if (answers.question1 === 'Нет') {
         totalCO2 += 500;
         ecology_advice += "Вы не сортируете мусор, что может привести к высоким выбросам CO₂. Попробуйте начать сортировать! ";
@@ -215,7 +212,7 @@ function displayResults() {
         ecology_advice += "Вы сортируете мусор, что снижает выбросы CO₂. Отличная привычка! ";
     }
 
-    // Рассчитываем выбросы CO2 по второму вопросу
+ 
     if (answers.question2 === 'Почти не использую') {
         totalCO2 += 100;
         ecology_advice += " Попробуйте заменить одноразовые предметы на многоразовые — это поможет уменьшить выбросы CO₂. ";
@@ -527,12 +524,12 @@ function displayResults() {
 if (window.location.pathname.includes("results.html")) {
     displayResults();
 }
-// Function to redirect to the registration page
+
 function redirectToRegistration() {
     window.location.href = "registration.html";
 }
 
-// Function to handle login
+
 function loginUser() {
     const username = document.getElementById("loginUsername").value;
     const password = document.getElementById("loginPassword").value;
@@ -595,7 +592,7 @@ function registerUser() {
             alert("Ошибка при регистрации. Попробуйте снова.");
         });
     }
-// Function to display the user's profile and recommendations on the profile page
+
 function displayProfilePage() {
     const user = JSON.parse(localStorage.getItem("user"));
     let answers = localStorage.getItem("quizAnswers");
@@ -615,7 +612,7 @@ function displayProfilePage() {
         const recommendationsForm = document.getElementById("recommendationsForm");
         recommendationsForm.innerHTML = ""; // Clear previous
 
-        // Collect advices
+
         const advices = [];
         for (let i = 1; i <= 29; i++) {
             const answer = answers[`question${i}`];
@@ -625,7 +622,7 @@ function displayProfilePage() {
             }
         }
 
-        // Render checkboxes
+
         advices.forEach((advice, idx) => {
             const label = document.createElement("label");
             label.style.display = "block";
@@ -639,7 +636,7 @@ function displayProfilePage() {
             recommendationsForm.appendChild(label);
         });
 
-        // Add percentage display
+
         let percentDiv = document.getElementById("completionPercent");
         if (!percentDiv) {
             percentDiv = document.createElement("div");
@@ -648,7 +645,7 @@ function displayProfilePage() {
             recommendationsForm.parentNode.appendChild(percentDiv);
         }
 
-        // Function to update percent
+  
         function updatePercent() {
             const checkboxes = recommendationsForm.querySelectorAll('.advice-checkbox');
             const total = checkboxes.length;
@@ -657,17 +654,14 @@ function displayProfilePage() {
             percentDiv.textContent = `Выполнено: ${done} из ${total} (${percent}%)`;
         }
 
-        // Initial percent
         updatePercent();
 
-        // Listen for changes
         recommendationsForm.addEventListener('change', updatePercent);
     } else {
         alert("Ошибка: данные пользователя или ответы не найдены.");
     }
 } 
 
-// Check if the user is on the profile page and display their profile
 if (window.location.pathname.includes("profile.html")) {
     displayProfilePage();
 }
@@ -694,12 +688,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const photoUpload = document.getElementById('photoUpload');
     const changePhotoButton = document.getElementById('changePhotoButton');
 
-    // Open file input when the "Change Photo" button is clicked
+
     changePhotoButton.addEventListener('click', () => {
         photoUpload.click();
     });
 
-    // Update the profile photo when a new file is selected
     photoUpload.addEventListener('change', (event) => {
         const file = event.target.files[0];
         if (file) {
