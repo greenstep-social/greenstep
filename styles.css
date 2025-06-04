@@ -1,7 +1,5 @@
-/* Подключаем шрифт Unbounded */
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700&display=swap');
 
-/* Основной стиль */
 body {
     font-family: 'Unbounded', sans-serif;
     margin: 5;
@@ -43,22 +41,21 @@ body {
     margin-bottom: 8px;
 }
 
-/* Стиль для рекомендаций */
 .advice-container {
     max-width: 800px;
     margin: 20px auto;
-    text-align: center; /* Выравнивание по центру */
+    text-align: center; 
 }
 
 .advice-container p {
     font-family: 'Unbounded', sans-serif;
-    font-weight: 300; /* Light */
+    font-weight: 300; 
     color: rgb(255, 255, 255);
 }
 
 .advice-container strong {
     font-family: 'Unbounded', sans-serif;
-    font-weight: 500; /* Medium */
+    font-weight: 500;
     color: white;
 }
 
@@ -151,15 +148,15 @@ label {
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin: 0.5rem auto; /* Center horizontally */
-    display: block;      /* Required for margin auto to work */
+    margin: 0.5rem auto; 
+    display: block;    
 }
 
 .reg-btn:hover {
     background-color: #28605a;
 }
 
-/* Адаптивность */
+
 @media (max-width: 768px) {
     .container {
         padding: 15px;
